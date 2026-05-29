@@ -1,0 +1,7 @@
+mud-to-clay:
+  delay-seconds: 10
+trampling:
+  steps-per-stage: 20
+crops:
+  wither-chance: 0.3
+  splash-radius: 6

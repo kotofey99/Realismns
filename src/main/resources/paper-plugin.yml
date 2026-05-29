@@ -1,0 +1,4 @@
+name: Realismns
+version: '1.0-SNAPSHOT'
+main: org.kotofey.realismns.Realismns
+api-version: '1.21'
