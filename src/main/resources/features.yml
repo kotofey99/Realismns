@@ -7,6 +7,7 @@
 #   crops — увядание и полив культур
 #   backpacks — рюкзаки целиком
 #   backpack-upgrades — улучшения (подбор, магнит, крафты улучшений)
+#   rotting-food — гниение еды по реальному времени
 
 trampling: true
 
@@ -19,5 +20,5 @@ crops: true
 backpacks: true
 backpack-upgrades: true
 
-# rotting-food — гниение еды по реальному времени
+
 rotting-food: true
