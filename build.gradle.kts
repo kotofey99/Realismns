@@ -5,50 +5,43 @@ plugins {
 }
 
 group = "org.kotofey"
-version = "1.0-SNAPSHOT"
+version = "0.02Beta"
 
 repositories {
     mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/") {
-        name = "papermc-repo"
-    }
+    maven("https://repo.papermc.io/repository/maven-public/")
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:2.4.0-RC2")
+}
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+}
+
+kotlin {
+    jvmToolchain(21)
 }
 
 tasks {
     runServer {
-        // Configure the Minecraft version for our task.
-        // This is the only required configuration besides applying the plugin.
-        // Your plugin's jar (or shadowJar if present) will be used automatically.
-        minecraftVersion("1.21")
+        minecraftVersion("1.21.4")
     }
-}
-
-val targetJavaVersion = 21
-kotlin {
-    jvmToolchain(targetJavaVersion)
-}
-
-tasks {
     build {
         dependsOn("shadowJar")
     }
-
     shadowJar {
         archiveClassifier.set("")
         relocate("kotlin", "org.kotofey.realismns.libs.kotlin")
     }
-}
-
-tasks.processResources {
-    val props = mapOf("version" to version)
-    inputs.properties(props)
-    filteringCharset = "UTF-8"
-    filesMatching("paper-plugin.yml") {
-        expand(props)
+    processResources {
+        val props = mapOf("version" to version)
+        inputs.properties(props)
+        filteringCharset = "UTF-8"
+        filesMatching("plugin.yml") {
+            expand(props)
+        }
     }
 }

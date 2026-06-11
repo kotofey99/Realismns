@@ -1,0 +1,55 @@
+# Гниение продуктов — срок в ИГРОВЫХ часах (24 ч = 1 игровые сутки)
+# time-divider: делит значения ниже (12 при divider 4 = 3 игровых часа)
+# Не указано или 0 = не портится
+
+check-interval-seconds: 30
+time-divider: 4
+
+fridge:
+  # Сколько игровых тиков горит 1 уголь (24000 = 1 игровые сутки)
+  coal-burn-ticks: 24000
+
+spoiled:
+  message: "Вы съели испорченную еду!"
+  poison:
+    duration-seconds: 10
+    level: 1
+  hunger:
+    duration-seconds: 20
+    level: 2
+
+# Сырое мясо — 12 ч, жареное — 48 ч (2 дня)
+shelf-life-hours:
+  BEEF: 12
+  PORKCHOP: 12
+  MUTTON: 12
+  CHICKEN: 12
+  RABBIT: 12
+  COD: 10
+  SALMON: 10
+  COOKED_BEEF: 48
+  COOKED_PORKCHOP: 48
+  COOKED_MUTTON: 48
+  COOKED_CHICKEN: 48
+  COOKED_RABBIT: 48
+  COOKED_COD: 40
+  COOKED_SALMON: 40
+  BREAD: 24
+  APPLE: 72
+  CARROT: 96
+  POTATO: 96
+  BAKED_POTATO: 120
+  BEETROOT: 72
+  BEETROOT_SOUP: 24
+  MUSHROOM_STEW: 24
+  RABBIT_STEW: 24
+  SUSPICIOUS_STEW: 12
+  MELON_SLICE: 18
+  SWEET_BERRIES: 12
+  GLOW_BERRIES: 12
+  COOKIE: 168
+  PUMPKIN_PIE: 36
+  DRIED_KELP: 720
+  CHORUS_FRUIT: 120
+  TROPICAL_FISH: 8
+  SPIDER_EYE: 48

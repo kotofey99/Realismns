@@ -1,0 +1,23 @@
+# Включение и выключение механик плагина Realismns
+# true — включено, false — выключено
+
+#   trampling — вытаптывание блоков
+#   mud.water-bottle — грязь из бутылки
+#   mud.drying — грязь в глину (только ад или магма/лава рядом)
+#   crops — увядание и полив культур
+#   backpacks — рюкзаки целиком
+#   backpack-upgrades — улучшения (подбор, магнит, крафты улучшений)
+
+trampling: true
+
+mud:
+  water-bottle: true
+  drying: true
+
+crops: true
+
+backpacks: true
+backpack-upgrades: true
+
+# rotting-food — гниение еды по реальному времени
+rotting-food: true

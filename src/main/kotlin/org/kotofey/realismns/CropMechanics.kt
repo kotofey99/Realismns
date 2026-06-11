@@ -15,7 +15,7 @@ import org.bukkit.inventory.meta.PotionMeta
 import org.bukkit.potion.PotionType
 import kotlin.random.Random
 
-class CropMechanics(private val plugin: Realismns) : Listener {
+class CropMechanics(private val plugin: Realismns, private val biomeUtils: BiomeUtils) : Listener {
     private val random = Random
 
     private val cropTypes = setOf(
@@ -40,7 +40,9 @@ class CropMechanics(private val plugin: Realismns) : Listener {
 
         event.isCancelled = true
 
-        if (random.nextDouble() < plugin.config.getDouble("crops.wither-chance", 0.3)) {
+        val baseChance = plugin.config.getDouble("crops.wither-chance", 0.3)
+        val biomeMult = biomeUtils.witherChanceMultiplier(crop.location)
+        if (random.nextDouble() < baseChance * biomeMult) {
             val loc = crop.location.add(0.5, 0.5, 0.5)
             crop.type = Material.DEAD_BUSH
             crop.world.spawnParticle(Particle.POOF, loc, 15, 0.3, 0.3, 0.3, 0.02)
