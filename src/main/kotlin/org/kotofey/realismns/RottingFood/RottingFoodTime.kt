@@ -18,7 +18,7 @@ object RottingFoodTime {
         val totalHours = ticks / TICKS_PER_GAME_HOUR
         val days = totalHours / 24
         val hours = totalHours % 24
-        val minutes = (ticks % TICKS_PER_GAME_HOUR) * 60 / TICKS_PER_GAME_HOUR
+        val minutes = ticks % TICKS_PER_GAME_HOUR * 60 / TICKS_PER_GAME_HOUR
         return when {
             days > 0 -> "${days}д ${hours}ч ${minutes}м"
             hours > 0 -> "${hours}ч ${minutes}м"
