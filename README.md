@@ -7,7 +7,7 @@ A living world that remembers your steps — paths form where players run.
 Requirements
 - Java 17+
 - Gradle (or use the included wrapper)
-- A compatible Minecraft server (drop the built JAR into `mods/` or `plugins/` depending on your platform)
+- A compatible Minecraft server (drop the built JAR into `plugins/`)
 
 Build
 ```bash
@@ -17,7 +17,7 @@ Build
 The plugin/mod JAR will be in `build/libs/` after a successful build.
 
 Run
-- Place the produced JAR into your server's `mods/` (Fabric/Forge) or `plugins/` (Spigot/Paper) folder and restart the server.
+- Place the produced JAR into your server's `plugins/` (Spigot/Paper) folder and restart the server.
 
 ## Features / Modules
 
